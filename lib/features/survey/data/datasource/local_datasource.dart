@@ -59,7 +59,7 @@ class LocalSurveyDatasource {
   ];
 
   Future<List<QuestionModel>> getSurvey() async {
-    await Future.delayed(Duration(milliseconds: 200));
+    // await Future.delayed(Duration(milliseconds: 200));
     return _json.map((e) => QuestionModel.fromJson(e)).toList();
   }
 }
