@@ -7,7 +7,9 @@ import 'package:survey_app/features/survey/presentation/controller/controller.da
 
 class DynamicField extends StatelessWidget {
   final Question question;
+
   const DynamicField({super.key, required this.question});
+
   SurveyController get ctrl => Get.find<SurveyController>();
 
   @override

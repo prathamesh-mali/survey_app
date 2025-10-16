@@ -1,7 +1,7 @@
 class Question {
   final int id;
   final String question;
-  final String type; // text, radio, checkbox, dropdown, textarea, date, slider
+  final String type;
   final bool required;
   final List<String>? options;
   final double? min;

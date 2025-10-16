@@ -1,7 +1,6 @@
 import '../models/question_model.dart';
 
 class LocalSurveyDatasource {
-  // Hardcoded sample JSON
   final List<Map<String, dynamic>> _json = [
     {
       "id": 1,
