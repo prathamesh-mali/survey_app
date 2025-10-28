@@ -80,7 +80,7 @@ class DynamicField extends StatelessWidget {
                     ),
                     borderRadius: BorderRadius.circular(12),
                     color: selected == opt
-                        ? Colors.blue.withOpacity(0.05)
+                        ? Colors.blue.withValues(alpha: 0.05)
                         : Colors.transparent,
                   ),
                   child: RadioListTile<String>(
@@ -149,7 +149,7 @@ class DynamicField extends StatelessWidget {
                     ),
                     borderRadius: BorderRadius.circular(12),
                     color: checked
-                        ? Colors.blue.withOpacity(0.05)
+                        ? Colors.blue.withValues(alpha: 0.05)
                         : Colors.transparent,
                   ),
                   child: CheckboxListTile(
@@ -218,7 +218,9 @@ class DynamicField extends StatelessWidget {
               SizedBox(height: 12),
               DropdownButton2<String>(
                 underline: Container(),
-                value: selected,
+                value: selected != null && question.options!.contains(selected)
+                    ? selected
+                    : null,
                 isExpanded: true,
                 isDense: true,
                 buttonStyleData: ButtonStyleData(
@@ -364,7 +366,7 @@ class DynamicField extends StatelessWidget {
                   Container(
                     padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                     decoration: BoxDecoration(
-                      color: Colors.blue.withOpacity(0.1),
+                      color: Colors.blue.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: Text(
@@ -386,7 +388,7 @@ class DynamicField extends StatelessWidget {
                   trackHeight: 6,
                   thumbColor: Colors.blue,
                   thumbShape: RoundSliderThumbShape(enabledThumbRadius: 12),
-                  overlayColor: Colors.blue.withOpacity(0.2),
+                  overlayColor: Colors.blue.withValues(alpha: 0.2),
                   overlayShape: RoundSliderOverlayShape(overlayRadius: 24),
                   valueIndicatorColor: Colors.blue,
                   valueIndicatorTextStyle: TextStyle(

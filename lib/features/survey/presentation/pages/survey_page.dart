@@ -4,7 +4,7 @@ import 'package:survey_app/features/survey/presentation/controller/controller.da
 import 'package:survey_app/features/survey/presentation/pages/widget/dynamic_field.dart';
 
 class SurveyPage extends StatelessWidget {
-  final SurveyController ctrl = Get.put(SurveyController());
+  final ctrl = Get.find<SurveyController>();
 
   SurveyPage({super.key});
   @override
@@ -16,6 +16,24 @@ class SurveyPage extends StatelessWidget {
         shadowColor: Colors.transparent,
         backgroundColor: Colors.white,
         title: Text('Survey'),
+        actions: [
+          GestureDetector(
+            onTap: () {
+              ctrl.clear();
+              FocusScope.of(context).unfocus();
+            },
+            child: Padding(
+              padding: EdgeInsets.fromLTRB(0, 0, 20, 0),
+              child: Text(
+                "Clear All",
+                style: TextStyle(
+                  color: Colors.blue,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
       body: Obx(() {
         if (ctrl.isLoading.value) {
